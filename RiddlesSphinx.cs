@@ -17,5 +17,12 @@ class RiddleSphinx
     Console.WriteLine("You find no one. As you remember what was transcribed to you, you notice that the words were clear in your head. That there was no clear point of origin.");
     Console.WriteLine("Stricken by the silence in the room, you call out your answer:");
     Console.WriteLine("Question: " + riddles[0]);
+    string answer = Console.ReadLine();
+    bool color = answer == "red paint";
+    if (color){
+      Console.WriteLine("Congratulations! You got the answer! Guess you get to live another day.");
+    } else {
+      Console.WriteLine("Oops, looks like that's the wrong answer. Guess I'll eat you now...");
+    }
   }
 }
