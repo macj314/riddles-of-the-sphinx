@@ -10,19 +10,27 @@ class RiddleSphinx
 {
   static void Main()
   {
+    Random random = new Random();
+    bool check ;
+    string answer;
+    int loopIndex, contentIndex;
+    string[] riddles = { "What's red and smells like blue paint?", "I can fly but have no wings. I can cry but I have no eyes. Wherever I go, darkness follows me. What am I?", "What is easy to get into, but hard to get out of?" };
+    string[] answers = { "red paint", "clouds", "trouble"};
     Console.WriteLine("You stumble accross a great forboding sphinx. It's stare although lifeless, seems to follow you. All of a sudden, you hear a voice.");
-    string[] riddles = { "What's red and smells like blue paint?" };
-    Console.WriteLine("|| " + riddles[0] + " ||");
+    Console.WriteLine("|| " + riddles[contentIndex] + " ||");
     Console.WriteLine("The question echoes in your head. You quickly check your surroundings for anyone that may be lurking in the dark.");
     Console.WriteLine("You find no one. As you remember what was transcribed to you, you notice that the words were clear in your head. That there was no clear point of origin.");
     Console.WriteLine("Stricken by the silence in the room, you call out your answer:");
-    Console.WriteLine("Question: " + riddles[0]);
-    string answer = Console.ReadLine();
-    bool color = answer == "red paint";
-    if (color){
-      Console.WriteLine("Congratulations! You got the answer! Guess you get to live another day.");
-    } else {
-      Console.WriteLine("Oops, looks like that's the wrong answer. Guess I'll eat you now...");
+    for (loopIndex = 0; loopIndex < riddle.Length; loopIndex++){
+      contentIndex = random.Next(riddles.Length);
+      Console.WriteLine("Question: " + riddles[contentIndex]);
+      answer = Console.ReadLine();
+      check = answer == answers[contentIndex];
+      if (check){
+        Console.WriteLine("Congratulations! You got the answer! Guess you get to live another day.");
+      } else {
+        Console.WriteLine("Oops, looks like that's the wrong answer. Guess I'll eat you now...");
+      }
     }
   }
 }
